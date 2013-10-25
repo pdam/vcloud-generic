@@ -1,0 +1,28 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <f:entry title="${%VCloud Host}" help="/plugin/vcloud/help-vcloud-vcloudHost.html">
+        <f:textbox field="vdHost" />
+    </f:entry>
+    <f:entry title="${%Brief description of this overall configuration}" help="/plugin/vcloud/help-vcloud-vdDescription.html">
+        <f:textbox field="vdDescription" />
+    </f:entry>
+    <f:entry title="${%VCloud Organization}" help="/plugin/vcloud/help-vcloud-vdOrganization.html">
+        <f:textbox field="vdOrganization" />
+    </f:entry>
+    <f:entry title="${%VCloud Configuration}" help="/plugin/vcloud/help-vcloud-vdConfiguration.html">
+        <f:textbox field="vdConfiguration" />
+    </f:entry>
+    <f:entry title="${%Username}" help="/plugin/vcloud/help-vcloud-username.html">
+        <f:textbox field="username" />
+    </f:entry>
+    <f:entry title="${%Password}" help="/plugin/vcloud/help-vcloud-password.html">
+        <f:password field="password" />
+    </f:entry>
+
+    <f:advanced>
+      
+        <f:entry title="${%Max number of slaves online}" help="/plugin/vcloud/help-vcloud-maxOnlineSlaves.html">
+            <f:textbox clazz="required number" field="maxOnlineSlaves" />
+        </f:entry>
+    </f:advanced>
+    <f:validateButton title="${%Test Connection}" progress="${%Testing...}" method="testConnection" with="vcloudHost,vdDescription,vdOrganization,vdConfiguration,username,password"/>
+</j:jelly>
